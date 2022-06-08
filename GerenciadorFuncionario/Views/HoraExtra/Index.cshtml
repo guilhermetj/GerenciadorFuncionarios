@@ -1,0 +1,25 @@
+﻿@model IEnumerable<GerenciadorFuncionario.Data.Dtos.ProfissionalDto>
+@{
+    ViewData["Title"] = "HoraExtra";
+}
+
+<h1 class="text-center" style="margin-top: 50px">Definir hora extra</h1>
+
+<form asp-action="Resumo">
+  <div class="form-group">
+    <label for="exampleFormControlSelect1">Profissional:</label>
+    <select class="form-control text-center" id="exampleFormControlSelect1" name="id">
+    @foreach(var p in Model){
+           <option value="@p.Id">@p.NomeCompleto | Salario: @p.Salario</option>
+    }
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="exampleFormControlInput1">Quantidade de horas extras:</label>
+    <input type="number" class="form-control" id="exampleFormControlInput1" name="qtdHoraExtra">
+  </div>
+  <div style="margin-top:30px">
+    <button type="submit" class="btn btn-success" style="float:right">Somar hora extra</button>
+     <a asp-controller="Profissional" asp-action="Index" class="btn btn-primary">Voltar</a>
+  </div>
+</form>

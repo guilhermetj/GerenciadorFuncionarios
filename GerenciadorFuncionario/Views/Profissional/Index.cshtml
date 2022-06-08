@@ -1,0 +1,36 @@
+﻿@model IEnumerable<GerenciadorFuncionario.Data.Dtos.ProfissionalDto>
+@{
+    ViewData["Title"] = "Index";
+}
+<h1 class="text-center">Gerenciamento de funcionarios</h1>
+<a asp-action="Create" class="btn btn-primary">Cadastrar Funcionario</a>
+<a asp-controller="HoraExtra" asp-action="Index"  class="btn btn-success" style="float:right">Hora Extra</a>
+<table class="table" style="margin-top: 20px">
+  <thead>
+    <tr class="text-center">
+      <th scope="col">Id</th>
+      <th scope="col">Nome Completo</th>
+      <th scope="col">Telefone</th>
+      <th scope="col">Rg</th>
+      <th scope="col">Endereço</th>
+      <th scope="col">Salario</th>
+      <th scope="col">Ações</th>
+    </tr>
+  </thead>
+  <tbody>
+     @foreach(var profissional in Model){
+     <tr class="text-center">
+         <th scope="row">@Html.DisplayFor(p => profissional.Id)</th>
+         <td>@Html.DisplayFor(p => profissional.NomeCompleto)</td>
+         <td>@Html.DisplayFor(p => profissional.Telefone)</td>
+         <td>@Html.DisplayFor(p => profissional.Rg)</td>
+         <td>@Html.DisplayFor(p => profissional.Endereco)</td>
+         <td>@Html.DisplayFor(p => profissional.Salario)</td>
+         <td>
+             <a asp-action="Update" class="btn btn-primary" asp-route-id="@profissional.Id">Editar</a>
+             <a asp-action="Delete" class="btn btn-danger" asp-route-id="@profissional.Id">Excluir</a>
+         </td>
+     </tr>
+     }
+  </tbody>
+</table>

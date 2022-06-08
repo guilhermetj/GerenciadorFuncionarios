@@ -1,0 +1,15 @@
+﻿@model GerenciadorFuncionario.Data.Dtos.ProfissionalDetailsDto
+
+@{
+    ViewData["Title"] = "Delete";
+}
+<div class="container text-center" style="margin-top:100px">
+    <h1>Você deseja deletar o funcionario @Html.DisplayFor(model => model.NomeCompleto)?</h1>
+    <div>
+        <form asp-action="Delete">
+            <input type="hidden" asp-for="Id" />
+            <a asp-controller="Profissional" asp-action="Index" class="btn btn-primary">Voltar</a> |
+            <input type="submit" value="Deletar" class="btn btn-danger" /> 
+        </form>
+    </div>
+</div>

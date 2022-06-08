@@ -1,0 +1,35 @@
+﻿@model GerenciadorFuncionario.Data.Dtos.ProfissionalDetailsDto;
+@{
+    ViewData["Title"] = "Update";
+}
+<h1 class="text-center">Edição de funcionario</h1>
+<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+<form asp-action="Update">
+    <div class="mb-3">
+      <label  class="form-label">Nome Completo</label>
+      <input type="text" class="form-control" asp-for="NomeCompleto" >
+      <span asp-validation-for="NomeCompleto" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+      <label  class="form-label">Telefone</label>
+      <input type="text" class="form-control" asp-for="Telefone">
+      <span asp-validation-for="Telefone" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Rg</label>
+      <input type="text" class="form-control" asp-for="Rg">
+      <span asp-validation-for="Rg" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Endereço</label>
+      <input type="text" class="form-control" asp-for="Endereco">
+      <span asp-validation-for="Endereco" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Salario</label>
+      <input type="text" class="form-control" asp-for="Salario">
+      <span asp-validation-for="Salario" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-success" style="float:right">Enviar</button>
+    <a asp-controller="Profissional" asp-action="Index" class="btn btn-primary">Voltar</a>
+</form>

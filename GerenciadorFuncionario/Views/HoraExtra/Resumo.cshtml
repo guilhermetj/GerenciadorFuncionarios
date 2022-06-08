@@ -1,0 +1,16 @@
+﻿@model GerenciadorFuncionario.Data.Dtos.HoraExtraDto
+@{
+    ViewData["Title"] = "Resumo";
+}
+<div class="container text-center" style="margin-top: 100px">
+    <h1>Resumo de Horas Extras</h1>
+
+    <h3>Nome: @Html.DisplayFor(model => model.NomeProfissioanl)</h3>
+    <h3>Salario: @Html.DisplayFor(model => model.SalarioProfissional)</h3>
+    <h3>Quantidade de horas extras: @Html.DisplayFor(model => model.QtdHoraExtra)</h3>
+    <h3>Valor da hora extra: @Html.DisplayFor(model => model.ValorHoraExtra)</h3>
+    <h3>Salario total: @Html.DisplayFor(model => model.SalarioHoraExtra)</h3>
+    <a asp-controller="Profissional" asp-action="Index" class="btn btn-primary">Voltar</a>
+</div>
+
+
